@@ -30,6 +30,9 @@ class AdjacencyMatrix:
                 in_list.append(i)
         return in_list
 
+    def get_weight(self, u, v):
+        return 1
+
 
 class AdjacencyList:
     def __init__(self, n):
@@ -55,3 +58,6 @@ class AdjacencyList:
             if self.vertex_list[i].has_data(j):
                 in_list.append(i)
         return in_list
+
+    def get_weight(self, u, v):
+        return 1
