@@ -2,8 +2,9 @@ import heapq
 
 
 class Dijkstra:
-    def __init__(self, graph=None):
+    def __init__(self, graph, source):
         self.graph = graph
+        self.source = source
         self.q = []
         self.d = []
         self.pi = []
@@ -11,7 +12,7 @@ class Dijkstra:
     def set_graph(self, graph):
         self.graph = graph
 
-    def init_single_source(self, s):
+    def init_single_source(self):
         for v in range(self.graph.vertex_size):
             self.d.append(None)
             self.pi.append(None)
@@ -31,5 +32,10 @@ class Dijkstra:
                     break
 
     def dijkstra(self):
-        # TODO
-        pass
+        self.init_single_source()
+        heapq.heappush(self.q, (0, self.source))
+        self.d[self.source] = 0
+        while len(self.q) != 0:
+            (d, u) = heapq.heappop(self.q)
+            for x in self.graph.out(u):
+                self.relax(u, x)
