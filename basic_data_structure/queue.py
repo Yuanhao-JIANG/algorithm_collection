@@ -34,4 +34,3 @@ class Queue:
             return None
         else:
             return self.head.data
-
