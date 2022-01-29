@@ -1,5 +1,6 @@
 import numpy as np
-from basic_data_structure.linked_list import LinkedList, Node
+from basic_data_structure.node import Node
+from basic_data_structure.linked_list import LinkedList
 
 
 class AdjacencyMatrix:
